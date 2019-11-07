@@ -1,24 +1,8 @@
-Travis build: [![Build Status](https://travis-ci.org/holger1411/master12.svg?branch=master)](https://travis-ci.org/holger1411/master12) | Start talking: [![Gitter](https://img.shields.io/gitter/room/holger1411/master12.svg?maxAge=2592000?style=flat-square)](https://gitter.im/holger1411/master12)
-
-#### See: [Official Demo](https://master12.com/master12) | Read: [Official Docs Page](https://master12.github.io/)
-
-# Master12 WordPress Theme Framework
-
-Website: [https://master12.com](https://master12.com)
-
-Child Theme Project: [https://github.com/holger1411/master12-child](https://github.com/holger1411/master12-child)
-
+# WordPress Theme Framework
 ## About
 
 I’m a huge fan of Underscores, Bootstrap, and Sass. Why not combine these into a solid WordPress Theme Framework?
-That’s what Master12 is.
-You can use it as starter theme and build your own theme on top of it. Or you use it as parent theme and create your own child theme for Master12.
-
-## License
-Master12 WordPress Theme, Copyright 2013-2017 Holger Koenemann
-Master12 is distributed under the terms of the GNU GPL version 2
-
-http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+You can use it as starter theme and build your own theme on top of it. Or you use it as parent theme and create your own child theme for 
 
 ## Changelog
 See [changelog](CHANGELOG.md)

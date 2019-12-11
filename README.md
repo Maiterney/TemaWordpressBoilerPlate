@@ -17,7 +17,7 @@ See [changelog](CHANGELOG.md)
 - Jetpack ready.
 - WooCommerce support.
 - Contact Form 7 support.
-- [Child Theme](https://github.com/holger1411/master12-child) ready.
+- [Child Theme](https://github.com/holger1411/AgenciaOpen-child) ready.
 - Translation ready.
 
 ## Starter Theme + HTML Framework = WordPress Theme Framework
@@ -27,13 +27,13 @@ Why not add a well known and supported layout framework to have a solid, clean a
 
 ## Confused by All the CSS and Sass Files?
 
-Some basics about the Sass and CSS files that come with Master12:
+Some basics about the Sass and CSS files that come with AgenciaOpen:
 - The theme itself uses the `/style.css`file just to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
 - The `/css/theme.css` and its minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`:
 
-                  - 1 "theme/theme_variables";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or Master12 variables here
+                  - 1 "theme/theme_variables";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or AgenciaOpen variables here
                   - 2 "../src/bootstrap-sass/assets/stylesheets/bootstrap";  // <--------- All the Bootstrap stuff - Don´t edit this!
-                  - 3 "master12/master12"; // <--------- Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
+                  - 3 "AgenciaOpen/AgenciaOpen"; // <--------- Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
                   - 4 "../src/fontawesome/scss/font-awesome"; // <--------- Font Awesome Icon styles
 
                   // Any additional imported files //
@@ -45,23 +45,23 @@ Some basics about the Sass and CSS files that come with Master12:
 ## Installation
 
 ### Classic install
-- Download the master12 folder from GitHub or from [https://master12.com](https://master12.com)
-- IMPORTANT: If you download it from GitHub make sure you rename the "master12-master.zip" file just to "master12.zip" or you might have problems using child themes !!
+- Download the AgenciaOpen folder from GitHub or from [https://www.agenciaopen.com.br](https://www.agenciaopen.com.br)
+- IMPORTANT: If you download it from GitHub make sure you rename the "AgenciaOpen-master.zip" file just to "AgenciaOpen.zip" or you might have problems using child themes !!
 - Upload it into your WordPress installation subfolder here: `/wp-content/themes/`
 - Login to your WordPress backend
 - Go to Appearance → Themes
-- Activate the Master12 theme
+- Activate the AgenciaOpen theme
 
 ### npm install
 - Open your terminal
-- Change to the directory where you want to add Master12
-- Type `npm install master12`
+- Change to the directory where you want to add AgenciaOpen
+- Type `npm install AgenciaOpen`
 
 ### WordPress.org install
 - Open your WordPress backend
 - Click on "Appearance -> Themes"
 - Hit the "Add new" button
-- Search for "Master12"
+- Search for "AgenciaOpen"
 - Hit the "install" button
 - Activate the theme
 
@@ -69,7 +69,7 @@ Some basics about the Sass and CSS files that come with Master12:
 
 ### Installing Dependencies
 - Make sure you have installed Node.js and Browser-Sync* (* optional, if you wanna use it) on your computer globally
-- Then open your terminal and browse to the location of your Master12 copy
+- Then open your terminal and browse to the location of your AgenciaOpen copy
 - Run: `$ npm install`
 
 ### Running

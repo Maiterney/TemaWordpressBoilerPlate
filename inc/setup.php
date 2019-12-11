@@ -2,7 +2,7 @@
 /**
  * Theme basic setup.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 
@@ -11,7 +11,7 @@ if ( ! isset( $content_width ) ) {
 	$content_width = 640; /* pixels */
 }
 
-if ( ! function_exists( 'master12_setup' ) ) :
+if ( ! function_exists( 'AgenciaOpen_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -19,14 +19,14 @@ if ( ! function_exists( 'master12_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function master12_setup() {
+	function AgenciaOpen_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on master12, use a find and replace
-		 * to change 'master12' to the name of your theme in all the template files
+		 * If you're building a theme based on AgenciaOpen, use a find and replace
+		 * to change 'AgenciaOpen' to the name of your theme in all the template files
 		 */
-		load_theme_textdomain( 'master12', get_template_directory() . '/languages' );
+		load_theme_textdomain( 'AgenciaOpen', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -41,7 +41,7 @@ if ( ! function_exists( 'master12_setup' ) ) :
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'master12' ),
+			'primary' => __( 'Primary Menu', 'AgenciaOpen' ),
 		) );
 
 		/*
@@ -79,7 +79,7 @@ if ( ! function_exists( 'master12_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'master12_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'AgenciaOpen_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -88,13 +88,13 @@ if ( ! function_exists( 'master12_setup' ) ) :
 		add_theme_support( 'custom-logo' );
 
 		// Check and setup theme default settings.
-		master12_setup_theme_default_settings();
+		AgenciaOpen_setup_theme_default_settings();
 
 	}
-endif; // master12_setup.
-add_action( 'after_setup_theme', 'master12_setup' );
+endif; // AgenciaOpen_setup.
+add_action( 'after_setup_theme', 'AgenciaOpen_setup' );
 
-if ( ! function_exists( 'master12_custom_excerpt_more' ) ) {
+if ( ! function_exists( 'AgenciaOpen_custom_excerpt_more' ) ) {
 	/**
 	 * Removes the ... from the excerpt read more link
 	 *
@@ -102,13 +102,13 @@ if ( ! function_exists( 'master12_custom_excerpt_more' ) ) {
 	 *
 	 * @return string
 	 */
-	function master12_custom_excerpt_more( $more ) {
+	function AgenciaOpen_custom_excerpt_more( $more ) {
 		return '';
 	}
 }
-add_filter( 'excerpt_more', 'master12_custom_excerpt_more' );
+add_filter( 'excerpt_more', 'AgenciaOpen_custom_excerpt_more' );
 
-if ( ! function_exists( 'master12_all_excerpts_get_more_link' ) ) {
+if ( ! function_exists( 'AgenciaOpen_all_excerpts_get_more_link' ) ) {
 	/**
 	 * Adds a custom read more link to all excerpts, manually or automatically generated
 	 *
@@ -116,10 +116,10 @@ if ( ! function_exists( 'master12_all_excerpts_get_more_link' ) ) {
 	 *
 	 * @return string
 	 */
-	function master12_all_excerpts_get_more_link( $post_excerpt ) {
+	function AgenciaOpen_all_excerpts_get_more_link( $post_excerpt ) {
 
-		return $post_excerpt . ' [...]<p><a class="btn btn-secondary master12-read-more-link" href="' . esc_url( get_permalink( get_the_ID() )) . '">' . __( 'Read More...',
-		'master12' ) . '</a></p>';
+		return $post_excerpt . ' [...]<p><a class="btn btn-secondary AgenciaOpen-read-more-link" href="' . esc_url( get_permalink( get_the_ID() )) . '">' . __( 'Read More...',
+		'AgenciaOpen' ) . '</a></p>';
 	}
 }
-add_filter( 'wp_trim_excerpt', 'master12_all_excerpts_get_more_link' );
+add_filter( 'wp_trim_excerpt', 'AgenciaOpen_all_excerpts_get_more_link' );

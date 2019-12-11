@@ -2,7 +2,7 @@
 /**
  * The sidebar containing the main widget area.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {

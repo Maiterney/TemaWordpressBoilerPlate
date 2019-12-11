@@ -2,7 +2,7 @@
 /**
  * Partial template for content in page.php
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'master12' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'AgenciaOpen' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -31,7 +31,7 @@
 
 	<!--<footer class="entry-footer">
 
-		<?php edit_post_link( __( 'Edit', 'master12' ), '<span class="edit-link">', '</span>' ); ?>
+		<?php edit_post_link( __( 'Edit', 'AgenciaOpen' ), '<span class="edit-link">', '</span>' ); ?>
 
 	</footer> .entry-footer -->
 

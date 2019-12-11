@@ -2,15 +2,15 @@
 /**
  * Custom header setup.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
-function master12_custom_header_setup() {
+function AgenciaOpen_custom_header_setup() {
 
 	/**
-	 * Filter Master12 custom-header support arguments.
+	 * Filter AgenciaOpen custom-header support arguments.
 	 *
-	 * @since Master12 0.5.2
+	 * @since AgenciaOpen 0.5.2
 	 *
 	 * @param array $args {
 	 *     An array of custom-header support arguments.
@@ -24,7 +24,7 @@ function master12_custom_header_setup() {
 	 *     @type string $flex-height     		Flex support for height of header.
 	 * }
 	 */
-	add_theme_support( 'custom-header', apply_filters( 'master12_custom_header_args', array(
+	add_theme_support( 'custom-header', apply_filters( 'AgenciaOpen_custom_header_args', array(
 		'default-image'      => get_parent_theme_file_uri( '/img/header.jpg' ),
 		'width'              => 2000,
 		'height'             => 1200,
@@ -35,8 +35,8 @@ function master12_custom_header_setup() {
 		'default-image' => array(
 			'url'           => '%s/img/header.jpg',
 			'thumbnail_url' => '%s/img/header.jpg',
-			'description'   => __( 'Default Header Image', 'master12' ),
+			'description'   => __( 'Default Header Image', 'AgenciaOpen' ),
 		),
 	) );
 }
-add_action( 'after_setup_theme', 'master12_custom_header_setup' );
+add_action( 'after_setup_theme', 'AgenciaOpen_custom_header_setup' );

@@ -2,14 +2,14 @@
 /**
  * Add WooCommerce support
  *
- * @package master12
+ * @package AgenciaOpen
  */
-add_action( 'after_setup_theme', 'master12_woocommerce_support' );
-if ( ! function_exists( 'master12_woocommerce_support' ) ) {
+add_action( 'after_setup_theme', 'AgenciaOpen_woocommerce_support' );
+if ( ! function_exists( 'AgenciaOpen_woocommerce_support' ) ) {
 	/**
 	 * Declares WooCommerce theme support.
 	 */
-	function master12_woocommerce_support() {
+	function AgenciaOpen_woocommerce_support() {
 		add_theme_support( 'woocommerce' );
 		
 		// Add New Woocommerce 3.0.0 Product Gallery support
@@ -20,7 +20,7 @@ if ( ! function_exists( 'master12_woocommerce_support' ) ) {
 		//add_theme_support( 'wc-product-gallery-slider' );
 
 		// hook in and customizer form fields.
-		add_filter( 'woocommerce_form_field_args', 'master12_wc_form_field_args', 10, 3 );
+		add_filter( 'woocommerce_form_field_args', 'AgenciaOpen_wc_form_field_args', 10, 3 );
 	}
 }
 /**
@@ -33,7 +33,7 @@ if ( ! function_exists( 'master12_woocommerce_support' ) ) {
  *
  * @return mixed
  */
-function master12_wc_form_field_args( $args, $key, $value = null ) {
+function AgenciaOpen_wc_form_field_args( $args, $key, $value = null ) {
 	// Start field type switch case.
 	switch ( $args['type'] ) {
 		/* Targets all select input type elements, except the country and state select input types */

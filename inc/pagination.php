@@ -2,7 +2,7 @@
 /**
  * Pagination layout.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 /**
@@ -10,8 +10,8 @@
  * Credits to http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
  */
 
-if ( ! function_exists( 'master12_pagination' ) ) :
-function master12_pagination() {
+if ( ! function_exists( 'AgenciaOpen_pagination' ) ) :
+function AgenciaOpen_pagination() {
 	if ( is_singular() ) {
 		return;
 	}

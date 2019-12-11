@@ -2,29 +2,29 @@
 /**
  * Understrap modify editor
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 /**
  * Registers an editor stylesheet for the theme.
  */
-function master12_wpdocs_theme_add_editor_styles() {
+function AgenciaOpen_wpdocs_theme_add_editor_styles() {
   add_editor_style( 'css/custom-editor-style.css' );
 }
-add_action( 'admin_init', 'master12_wpdocs_theme_add_editor_styles' );
+add_action( 'admin_init', 'AgenciaOpen_wpdocs_theme_add_editor_styles' );
 
 // Add TinyMCE style formats.
-add_filter( 'mce_buttons_2', 'master12_tiny_mce_style_formats' );
+add_filter( 'mce_buttons_2', 'AgenciaOpen_tiny_mce_style_formats' );
 
-function master12_tiny_mce_style_formats( $styles ) {
+function AgenciaOpen_tiny_mce_style_formats( $styles ) {
 
     array_unshift( $styles, 'styleselect' );
     return $styles;
 }
 
-add_filter( 'tiny_mce_before_init', 'master12_tiny_mce_before_init' );
+add_filter( 'tiny_mce_before_init', 'AgenciaOpen_tiny_mce_before_init' );
 
-function master12_tiny_mce_before_init( $settings ) {
+function AgenciaOpen_tiny_mce_before_init( $settings ) {
 
   $style_formats = array(
       array(

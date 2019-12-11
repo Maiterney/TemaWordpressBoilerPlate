@@ -4,11 +4,11 @@
  *
  * Template for displaying a page without sidebar even if a sidebar widget is published.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 get_header();
-$container = get_theme_mod( 'master12_container_type' );
+$container = get_theme_mod( 'AgenciaOpen_container_type' );
 ?>
 
 <div class="wrapper" id="full-width-page-wrapper">

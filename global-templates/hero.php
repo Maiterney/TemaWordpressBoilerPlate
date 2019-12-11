@@ -2,7 +2,7 @@
 /**
  * Hero setup.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 ?>

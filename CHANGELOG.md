@@ -27,7 +27,7 @@
               - Update prefixes
               - Remove automatically db updates by theme
               - Rename and streamline functions
-              - Changing WooCommerce text domain to "master12"
+              - Changing WooCommerce text domain to "AgenciaOpen"
               - Disable theme-settings.php call
               - Remove jQuery 3.2.1 slim and switch back to WP core jQuery version
               - Update Bootstrap 4 Beta 2 to commit which fixes jQuery conflict
@@ -61,7 +61,7 @@
               - Hot fix release
 
             - ** Release 0.6.4.1 August 17h 2017 **
-              - Hot fix release - Rebuild new Bootstrap 4 Beta navbar markup into Master12
+              - Hot fix release - Rebuild new Bootstrap 4 Beta navbar markup into AgenciaOpen
 
             - ** Release 0.6.3 August 14h 2017 **
                - Update to Bootstrap 4 Beta

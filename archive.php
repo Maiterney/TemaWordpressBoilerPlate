@@ -4,14 +4,14 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 get_header();
 ?>
 
 <?php
-$container   = get_theme_mod( 'master12_container_type' );
+$container   = get_theme_mod( 'AgenciaOpen_container_type' );
 ?>
 
 <div class="wrapper" id="archive-wrapper">
@@ -58,7 +58,7 @@ $container   = get_theme_mod( 'master12_container_type' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php master12_pagination(); ?>
+			<?php AgenciaOpen_pagination(); ?>
 
 		</div><!-- #primary -->
 

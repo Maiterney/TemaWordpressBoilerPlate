@@ -1,23 +1,23 @@
 
-Start talking: [![Gitter](https://img.shields.io/gitter/room/holger1411/master12.svg?maxAge=2592000?style=flat-square)](https://gitter.im/holger1411/master12)
+Start talking: [![Gitter](https://img.shields.io/gitter/room/holger1411/AgenciaOpen.svg?maxAge=2592000?style=flat-square)](https://gitter.im/holger1411/AgenciaOpen)
 
 ## About
 
 I’m a huge fan of Underscores, Bootstrap, and Sass. Why not combine these into a solid WordPress Theme Framework?
-That’s what Master12 is. 
-You can use it as starter theme and build your own theme on top of it. Or you use it as parent theme and create your own child theme for Master12.
+That’s what AgenciaOpen is. 
+You can use it as starter theme and build your own theme on top of it. Or you use it as parent theme and create your own child theme for AgenciaOpen.
 
-At the moment, Master12 is in a very early stage. But if you want, feel free to use it for your own WordPress theme!
+At the moment, AgenciaOpen is in a very early stage. But if you want, feel free to use it for your own WordPress theme!
 
-# Master12 WordPress Theme Framework
+# AgenciaOpen WordPress Theme Framework
 
-Website: [http://master12.com](http://master12.com)
+Website: [http://AgenciaOpen.com](http://AgenciaOpen.com)
 
-Child Theme Project: [https://github.com/holger1411/master12-child](https://github.com/holger1411/master12-child)
+Child Theme Project: [https://github.com/holger1411/AgenciaOpen-child](https://github.com/holger1411/AgenciaOpen-child)
 
 ## License
-Master12 WordPress Theme, Copyright 2013-2017 Holger Koenemann
-Master12 is distributed under the terms of the GNU GPL version 2
+AgenciaOpen WordPress Theme, Copyright 2013-2017 Holger Koenemann
+AgenciaOpen is distributed under the terms of the GNU GPL version 2
 
 http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 
@@ -148,7 +148,7 @@ http://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
 - Comes with extra slider script by [Owl Carousel](http://www.owlcarousel.owlgraphic.com/) (v2.1.4)
 - Jetpack ready.
 - WooCommerce support.
-- [Child Theme](https://github.com/holger1411/master12-child) ready.
+- [Child Theme](https://github.com/holger1411/AgenciaOpen-child) ready.
 - Translation ready.
 
 ## Starter Theme + HTML Framework = WordPress Theme Framework
@@ -158,13 +158,13 @@ Why not add a well known and supported layout framework to have a solid, clean a
 
 ## Confused by All the CSS and Sass Files?
 
-Some basics about the Sass and CSS files that come with Master12:
+Some basics about the Sass and CSS files that come with AgenciaOpen:
 - The theme itself uses the `/style.css`file just to identify the theme inside of WordPress. The file is not loaded by the theme and does not include any styles.
 - The `/css/theme.css` and it´s minified little brother `/css/theme.min.css` file(s) provides all styles. It is composed of five different SCSS sets and one variable file at `/sass/theme.scss`:
 
-                  - 1 "theme/theme_variables";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or Master12 variables here
+                  - 1 "theme/theme_variables";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or AgenciaOpen variables here
                   - 2 "../src/bootstrap-sass/assets/stylesheets/bootstrap";  // <--------- All the Bootstrap stuff - Don´t edit this!
-                  - 3 "master12/master12"; // <--------- Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
+                  - 3 "AgenciaOpen/AgenciaOpen"; // <--------- Some basic WordPress stylings and needed styles to combine Boostrap and Underscores
                   - 4 "../src/fontawesome/scss/font-awesome"; // <--------- Font Awesome Icon styles
 
                   // Any additional imported files //
@@ -175,18 +175,18 @@ Some basics about the Sass and CSS files that come with Master12:
 
 ## Installation
 
-- Download the master12 folder from GitHub or from master12.com
-- IMPORTANT: If you download it from GitHub make sure you rename the "master12-master.zip" file just to "master12.zip" or you might have problems using child themes !!
+- Download the AgenciaOpen folder from GitHub or from AgenciaOpen.com
+- IMPORTANT: If you download it from GitHub make sure you rename the "AgenciaOpen-master.zip" file just to "AgenciaOpen.zip" or you might have problems using child themes !!
 - Upload it into your WordPress installation subfolder here: `/wp-content/themes/`
 - Login to your WordPress backend
 - Go to Appearance → Themes
-- Activate the Master12 theme
+- Activate the AgenciaOpen theme
 
 ## Developing With npm, Gulp and SASS and [Browser Sync][1]
 
 ### Installing Dependencies
 - Make sure you have installed Node.js and Browser-Sync* (* optional, if you wanna use it) on your computer globally
-- Then open your terminal and browse to the location of your Master12 copy
+- Then open your terminal and browse to the location of your AgenciaOpen copy
 - Run: `$ npm install` and then: `$ gulp copy-assets`
 
 ### Running

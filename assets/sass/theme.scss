@@ -1,0 +1,18 @@
+@import "theme/theme_variables";  // <--------- Add your variables into this file. Also add variables to overwrite Bootstrap or AgenciaOpen variables here
+//@import "AgenciaOpen/AgenciaOpen";// <-------- Loads the AgenciaOpen defaults. Just a few classes to incorporate BS in WP
+
+//Optional files - If you dont use the corresponding scripts/fonts comment em out
+//@import "assets/font-awesome"; // <------- Font Awesome Icon font
+@import "assets/fontello.scss"; // <------- Fontello Icon Font
+@import "assets/fonts.scss"; // <------ Fonts Default Caller
+@import "assets/default.scss"; // <----- Default Config
+//@import "assets/underscores"; // <------- Underscores media styles
+
+// Any additional imported files //
+@import "assets/grid.scss"; // <-------- Grid Boostrap Template
+@import "theme/theme";  // <--------- That's where you can add your own design. Thats your part!
+//@import "theme/contact-form7"; // Contact Form 7 - Bootstrap 4 support
+
+
+//COMPONENTS SHARED
+@import "components/nav";

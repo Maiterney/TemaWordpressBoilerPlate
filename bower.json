@@ -1,11 +1,11 @@
 {
-  "name": "master12",
+  "name": "AgenciaOpen",
   "version": "0.8.0",
-  "homepage": "http://master12.com",
+  "homepage": "http://AgenciaOpen.com",
   "authors": [
     "Holger Koenemann <office@holgerkoenemann.de>"
   ],
-  "description": "Master12 is a Bootstrap and underscores based WordPress theme framework.",
+  "description": "AgenciaOpen is a Bootstrap and underscores based WordPress theme framework.",
   "moduleType": "globals",
   "main": [
     "sass/theme.scss"
@@ -25,7 +25,7 @@
   ],
   "dependencies": {
   },
-  "_source": "https://github.com/holger1411/master12.git",
+  "_source": "https://github.com/holger1411/AgenciaOpen.git",
   "_target": "~0.8.0",
-  "_originalSource": "master12"
+  "_originalSource": "AgenciaOpen"
 }

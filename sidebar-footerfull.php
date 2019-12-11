@@ -2,10 +2,10 @@
 /**
  * Sidebar setup for footer full.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
-$container   = get_theme_mod( 'master12_container_type' );
+$container   = get_theme_mod( 'AgenciaOpen_container_type' );
 
 ?>
 

@@ -1,0 +1,16 @@
+@import ".././components/helpers/variables";
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    &.no-margin{
+        margin: 0 !important;
+    }
+}
+
+h1,h2,h3,h4,h5,h6, p, a, span, input, textarea,select{
+    font-family: $gothamedium, sans-serif;
+}

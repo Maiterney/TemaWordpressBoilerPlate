@@ -2,15 +2,15 @@
 /**
  * Declaring widgets
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 /**
  * Count number of widgets in a sidebar
  * Used to add classes to widget areas so widgets can be displayed one, two, three or four per row
  */
-if ( ! function_exists( 'master12_slbd_count_widgets' ) ) {
-	function master12_slbd_count_widgets( $sidebar_id ) {
+if ( ! function_exists( 'AgenciaOpen_slbd_count_widgets' ) ) {
+	function AgenciaOpen_slbd_count_widgets( $sidebar_id ) {
 		// If loading from front page, consult $_wp_sidebars_widgets rather than options
 		// to see if wp_convert_widget_settings() has made manipulations in memory.
 		global $_wp_sidebars_widgets;
@@ -44,13 +44,13 @@ if ( ! function_exists( 'master12_slbd_count_widgets' ) ) {
 	}
 }
 
-if ( ! function_exists( 'master12_widgets_init' ) ) {
+if ( ! function_exists( 'AgenciaOpen_widgets_init' ) ) {
 	/**
 	 * Initializes themes widgets.
 	 */
-	function master12_widgets_init() {
+	function AgenciaOpen_widgets_init() {
 		register_sidebar( array(
-			'name'          => __( 'Right Sidebar', 'master12' ),
+			'name'          => __( 'Right Sidebar', 'AgenciaOpen' ),
 			'id'            => 'right-sidebar',
 			'description'   => 'Right sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -60,7 +60,7 @@ if ( ! function_exists( 'master12_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Left Sidebar', 'master12' ),
+			'name'          => __( 'Left Sidebar', 'AgenciaOpen' ),
 			'id'            => 'left-sidebar',
 			'description'   => 'Left sidebar widget area',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
@@ -70,7 +70,7 @@ if ( ! function_exists( 'master12_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Hero Slider', 'master12' ),
+			'name'          => __( 'Hero Slider', 'AgenciaOpen' ),
 			'id'            => 'hero',
 			'description'   => 'Hero slider area. Place two or more widgets here and they will slide!',
 			'before_widget' => '<div class="carousel-item">',
@@ -80,36 +80,36 @@ if ( ! function_exists( 'master12_widgets_init' ) ) {
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Hero Static', 'master12' ),
+			'name'          => __( 'Hero Static', 'AgenciaOpen' ),
 			'id'            => 'statichero',
 			'description'   => 'Static Hero widget. no slider functionallity',
-		    'before_widget'  => '<div id="%1$s" class="static-hero-widget %2$s '. master12_slbd_count_widgets( 'statichero' ) .'">', 
+		    'before_widget'  => '<div id="%1$s" class="static-hero-widget %2$s '. AgenciaOpen_slbd_count_widgets( 'statichero' ) .'">', 
 		    'after_widget'   => '</div><!-- .static-hero-widget -->', 
 		    'before_title'   => '<h3 class="widget-title">', 
 		    'after_title'    => '</h3>',
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Footer Full', 'master12' ),
+			'name'          => __( 'Footer Full', 'AgenciaOpen' ),
 			'id'            => 'footerfull',
 			'description'   => 'Widget area below main content and above footer',
-		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. master12_slbd_count_widgets( 'footerfull' ) .'">', 
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. AgenciaOpen_slbd_count_widgets( 'footerfull' ) .'">', 
 		    'after_widget'   => '</div><!-- .footer-widget -->', 
 		    'before_title'   => '<h3 class="widget-title">', 
 		    'after_title'    => '</h3>', 
 		) );
 
 		register_sidebar( array(
-			'name'          => __( 'Topbar Left', 'master12' ),
+			'name'          => __( 'Topbar Left', 'AgenciaOpen' ),
 			'id'            => 'topbar',
 			'description'   => 'Widget area below main content in top',
-		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. master12_slbd_count_widgets( 'topbar' ) .'">', 
+		    'before_widget'  => '<div id="%1$s" class="footer-widget %2$s '. AgenciaOpen_slbd_count_widgets( 'topbar' ) .'">', 
 		    'after_widget'   => '</div><!-- .footer-widget -->', 
 		    'before_title'   => '<h3 class="widget-title">', 
 		    'after_title'    => '</h3>', 
 		) );
 
 	}
-} // endif function_exists( 'master12_widgets_init' ).
-add_action( 'widgets_init', 'master12_widgets_init' );
+} // endif function_exists( 'AgenciaOpen_widgets_init' ).
+add_action( 'widgets_init', 'AgenciaOpen_widgets_init' );
 

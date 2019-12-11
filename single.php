@@ -2,11 +2,11 @@
 /**
  * The template for displaying all single posts.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 get_header();
-$container   = get_theme_mod( 'master12_container_type' );
+$container   = get_theme_mod( 'AgenciaOpen_container_type' );
 ?>
 
 <div class="wrapper" id="single-wrapper">
@@ -24,7 +24,7 @@ $container   = get_theme_mod( 'master12_container_type' );
 
 					<?php get_template_part( 'loop-templates/content', 'single' ); ?>
 
-						<?php master12_post_nav(); ?>
+						<?php AgenciaOpen_post_nav(); ?>
 
 					<?php
 					// If comments are open or we have at least one comment, load up the comment template.

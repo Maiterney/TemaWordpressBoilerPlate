@@ -2,7 +2,7 @@
 /**
  * Sidebar - hero setup.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 ?>
@@ -23,7 +23,7 @@
 			    
 			    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 			    
-			    <span class="sr-only"><?php esc_html_e( 'Previous', 'master12' ); ?></span>
+			    <span class="sr-only"><?php esc_html_e( 'Previous', 'AgenciaOpen' ); ?></span>
 			 
 			 </a>
 			 
@@ -31,7 +31,7 @@
 			    
 			    <span class="carousel-control-next-icon" aria-hidden="true"></span>
 			    
-			    <span class="sr-only"><?php esc_html_e( 'Next', 'master12' ); ?></span>
+			    <span class="sr-only"><?php esc_html_e( 'Next', 'AgenciaOpen' ); ?></span>
 			  
 			</a>
 

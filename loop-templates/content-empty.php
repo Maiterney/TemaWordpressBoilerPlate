@@ -2,7 +2,7 @@
 /**
  * Content empty partial template.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 the_content();

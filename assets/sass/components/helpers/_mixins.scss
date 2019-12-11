@@ -1,0 +1,59 @@
+@mixin opacity($value){
+	$IEValue: $value*100;
+	opacity: $value;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity="+$IEValue+")";
+	filter: alpha(opacity=$IEValue);
+}
+
+@mixin quadrado( $px ){
+	width: $px;
+	height: $px;
+}
+
+@mixin espacamento( $rem ){
+	padding-top: $rem;
+	padding-bottom: $rem;
+}
+
+@mixin input-placeholder($color) {
+	&::-moz-placeholder {
+		color: $color;
+	}
+	&::-webkit-input-placeholder {
+		color: $color;
+	}
+	&:-ms-input-placeholder {
+		color: $color;
+	}
+	color: $color;
+}
+
+@mixin scale( $scale ){
+	-webkit-transform: scale($scale);
+	-moz-transform: scale($scale);
+	-o-transform: scale($scale);
+	-ms-transform: scale($scale);
+	transform: scale($scale);
+}
+
+@mixin translate( $x, $y ){
+	-webkit-transform: translate($x, $y);
+	-moz-transform: translate($x, $y);
+	-o-transform: translate($x, $y);
+	-ms-transform: translate($x, $y);
+	transform: translate($x, $y);
+}
+
+@mixin rotate( $deg ){
+	-webkit-transform: rotate($deg);
+	-moz-transform: rotate($deg);
+	-o-transform: rotate($deg);
+	-ms-transform: rotate($deg);
+	transform: rotate($deg);
+}
+
+@mixin flex-shrink( $number ){
+	-webkit-flex-shrink: $number;
+	-ms-flex-shrink: $number;
+	flex-shrink: $number;
+}

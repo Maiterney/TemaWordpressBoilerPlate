@@ -2,7 +2,7 @@
 /**
  * Single post partial template.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 ?>
@@ -14,7 +14,7 @@
 
 		<div class="entry-meta">
 
-			<?php master12_posted_on(); ?>
+			<?php AgenciaOpen_posted_on(); ?>
 
 		</div><!-- .entry-meta -->
 
@@ -28,7 +28,7 @@
 
 		<?php
 		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'master12' ),
+			'before' => '<div class="page-links">' . __( 'Pages:', 'AgenciaOpen' ),
 			'after'  => '</div>',
 		) );
 		?>
@@ -37,7 +37,7 @@
 
 	<footer class="entry-footer">
 
-		<?php master12_entry_footer(); ?>
+		<?php AgenciaOpen_entry_footer(); ?>
 
 	</footer><!-- .entry-footer -->
 

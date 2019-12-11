@@ -1,6 +1,6 @@
 // Defining base paths
 var basePaths = {
-    js: './js/',
+    js: './assets/js/',
     node: './node_modules/',
     dev: './src/'
 };
@@ -9,8 +9,8 @@ var basePaths = {
 // browser-sync watched files
 // automatically reloads the page when files changed
 var browserSyncWatchFiles = [
-    './css/*.min.css',
-    './js/*.min.js',
+    './build/css/min/*.min.css',
+    './build/js/*.min.js',
     './**/*.php'
 ];
 
@@ -18,8 +18,8 @@ var browserSyncWatchFiles = [
 // browser-sync options
 // see: https://www.browsersync.io/docs/options/
 var browserSyncOptions = {
-    proxy: "localhost/wordpress/",
-    notify: false
+    proxy: "localhost/CSUL/",
+    notify: true
 };
 
 
@@ -43,13 +43,16 @@ var browserSync = require('browser-sync').create();
 var del = require('del');
 var cleanCSS = require('gulp-clean-css');
 var gulpSequence = require('gulp-sequence');
+var jshint      = require('gulp-jshint');
+var plumber     = require('gulp-plumber');
+var jshintStyle = require('jshint-stylish');
 
 
 // Run:
 // gulp sass + cssnano + rename
 // Prepare the min.css for production (with 2 pipes to be sure that "theme.css" == "theme.min.css")
 gulp.task('scss-for-prod', function() {
-    var source =  gulp.src('./sass/*.scss')
+    var source =  gulp.src('./assets/sass/*.scss')
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
@@ -61,14 +64,14 @@ gulp.task('scss-for-prod', function() {
 
     var pipe1 = source.pipe(clone())
         .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./build/css/min'))
         .pipe(rename('custom-editor-style.css'))
 
 
     var pipe2 = source.pipe(clone())
         .pipe(minify-css())
         .pipe(rename({suffix: '.min'}))
-        .pipe(gulp.dest('./css'));
+        .pipe(gulp.dest('./build/css/min'));
 
     return merge(pipe1, pipe2);
 });
@@ -78,7 +81,7 @@ gulp.task('scss-for-prod', function() {
 // gulp sourcemaps + sass + reload(browserSync)
 // Prepare the child-theme.css for the development environment
 gulp.task('scss-for-dev', function() {
-    gulp.src('./sass/*.scss')
+    gulp.src('./assets/sass/*.scss')
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
@@ -88,11 +91,11 @@ gulp.task('scss-for-dev', function() {
         .pipe(sourcemaps.init({loadMaps: true}))
         .pipe(sass())
         .pipe(sourcemaps.write(undefined, { sourceRoot: null }))
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./build/css/min'))
 });
 
 gulp.task('watch-scss', ['browser-sync'], function () {
-    gulp.watch('./sass/**/*.scss', ['scss-for-dev']);
+    gulp.watch('./assets/sass/**/*.scss', ['scss-for-dev']);
 });
 
 
@@ -100,7 +103,7 @@ gulp.task('watch-scss', ['browser-sync'], function () {
 // gulp sass
 // Compiles SCSS files in CSS
 gulp.task('sass', function () {
-    var stream = gulp.src('./sass/*.scss')
+    var stream = gulp.src('./assets/sass/*.scss')
         .pipe(plumber({
             errorHandler: function (err) {
                 console.log(err);
@@ -108,7 +111,7 @@ gulp.task('sass', function () {
             }
         }))
         .pipe(sass())
-        .pipe(gulp.dest('./css'))
+        .pipe(gulp.dest('./build/css'))
         .pipe(rename('custom-editor-style.css'))
     return stream;
 });
@@ -118,8 +121,8 @@ gulp.task('sass', function () {
 // gulp watch
 // Starts watcher. Watcher runs gulp sass task on changes
 gulp.task('watch', function () {
-    gulp.watch('./sass/**/*.scss', ['styles']);
-    gulp.watch([basePaths.dev + 'js/**/*.js','js/**/*.js','!js/theme.js','!js/theme.min.js'], ['scripts']);
+    gulp.watch('./assets/sass/**/*.scss', ['styles']);
+    gulp.watch([basePaths.dev + 'js/**/*.js','assets/js/**/*.js'], ['scripts']);
 
     //Inside the watch task.
     gulp.watch('./img/**', ['imagemin'])
@@ -139,38 +142,36 @@ gulp.task('imagemin', function(){
 // gulp cssnano
 // Minifies CSS files
 gulp.task('cssnano', function(){
-  return gulp.src('./css/theme.css')
-    .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(plumber({
-            errorHandler: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-    .pipe(rename({suffix: '.min'}))
-    .pipe(cssnano({discardComments: {removeAll: true}}))
-    .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/'))
+	gulp.src(['assets/sass/*.scss'])
+	.pipe(sass({
+		project: __dirname,
+		css: './build/css',
+		sass: './assets/sass',
+		map: true,
+		style: 'compressed'
+	}))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest('build/css/min/'))
+	.pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('./css/theme.css')
-  .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(cleanCSS({compatibility: '*'}))
-    .pipe(plumber({
-            errorHandler: function (err) {
-                console.log(err);
-                this.emit('end');
-            }
-        }))
-    .pipe(rename({suffix: '.min'}))
-     .pipe(sourcemaps.write('./'))
-    .pipe(gulp.dest('./css/'));
+	gulp.src(['assets/sass/*.scss'])
+	.pipe(sass({
+		project: __dirname,
+		css: './build/css',
+		sass: './assets/sass',
+		map: true,
+		style: 'compressed'
+	}))
+	.pipe(rename({suffix: '.min'}))
+	.pipe(gulp.dest('build/css/min/'))
+	.pipe(browserSync.reload({stream:true}))
 });
 
 gulp.task('cleancss', function() {
-  return gulp.src('./css/*.min.css', { read: false }) // much faster
-    .pipe(ignore('theme.css'))
+  return gulp.src('./css/min/*.min.css', { read: false }) // much faster
+    .pipe(ignore('*.css'))
     .pipe(rimraf());
 });
 
@@ -186,32 +187,29 @@ gulp.task('browser-sync', function() {
 
 
 // Run:
-// gulp watch-bs
+// gulp
 // Starts watcher with browser-sync. Browser-sync reloads page automatically on your browser
-gulp.task('watch-bs', ['browser-sync', 'watch', 'scripts'], function () { });
+gulp.task('default', ['browser-sync', 'watch', 'scripts'], function () { });
 
 
 // Run: 
 // gulp scripts. 
 // Uglifies and concat all JS files into one
-gulp.task('scripts', function() {
-    var scripts = [
-
-        // Start - All BS4 stuff
-        basePaths.dev + 'js/bootstrap4/bootstrap.js',
-
-        // End - All BS4 stuff
-
-        basePaths.dev + 'js/skip-link-focus-fix.js'
-    ];
-  gulp.src(scripts)
-    .pipe(concat('theme.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('./js/'));
-
-  gulp.src(scripts)
-    .pipe(concat('theme.js'))
-    .pipe(gulp.dest('./js/'));
+gulp.task('scripts', function () {
+	return gulp.src('assets/js/**/*.js')
+	.pipe(plumber({
+		errorHandler: function (error) {
+			console.log(error.message);
+			this.emit('end');
+		}
+	}))
+	.pipe(jshint())
+	.pipe(jshint.reporter(jshintStyle))
+	.pipe(gulp.dest('build/js/'))
+	.pipe(uglify())
+	.pipe(rename({ suffix: '.min' }))
+	.pipe(gulp.dest('build/js/'))
+	.pipe(browserSync.reload({ stream: true }))
 });
 
 // Deleting any file inside the /src folder
@@ -293,3 +291,16 @@ gulp.task('dist-product', ['clean-dist-product'], function() {
 gulp.task('clean-dist-product', function () {
   return del(['dist-product/**/*',]);
 });
+
+//	gulp.src(['assets/sass/**/*.scss'])
+//	.pipe(customPlumber('Erro no SCSS'))
+//	.pipe(sass({
+//		project: __dirname,
+//		css: './build/css',
+//		sass: './assets/sass',
+//		map: true,
+//		style: 'compressed'
+//	}))
+//	.pipe(rename({suffix: '.min'}))
+//	.pipe(gulp.dest('build/css/'))
+//	.pipe(browserSync.reload({stream:true}))

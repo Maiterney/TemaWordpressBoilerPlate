@@ -2,12 +2,12 @@
 /**
  * The template for displaying search results pages.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 get_header();
 
-$container   = get_theme_mod( 'master12_container_type' );
+$container   = get_theme_mod( 'AgenciaOpen_container_type' );
 
 ?>
 
@@ -28,7 +28,7 @@ $container   = get_theme_mod( 'master12_container_type' );
 						
 							<h1 class="page-title"><?php printf(
 							/* translators:*/
-							 esc_html__( 'Search Results for: %s', 'master12' ),
+							 esc_html__( 'Search Results for: %s', 'AgenciaOpen' ),
 								'<span>' . get_search_query() . '</span>' ); ?></h1>
 
 					</header><!-- .page-header -->
@@ -56,7 +56,7 @@ $container   = get_theme_mod( 'master12_container_type' );
 			</main><!-- #main -->
 
 			<!-- The pagination component -->
-			<?php master12_pagination(); ?>
+			<?php AgenciaOpen_pagination(); ?>
 
 		</div><!-- #primary -->
 

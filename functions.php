@@ -1,8 +1,8 @@
 <?php
 /**
- * Master12 functions and definitions
+ * AgenciaOpen functions and definitions
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 /**
@@ -69,3 +69,8 @@ require get_template_directory() . '/inc/woocommerce.php';
  * Load Editor functions.
  */
 require get_template_directory() . '/inc/editor.php';
+
+/**
+ * Load Google Map.
+ */
+require get_template_directory() . '/inc/google-maps-unlock.php';

@@ -2,11 +2,11 @@
 /**
  * Right sidebar check.
  *
- * @package master12
+ * @package AgenciaOpen
  */
 ?>
 
-<?php $sidebar_pos = get_theme_mod( 'master12_sidebar_position' ); ?>
+<?php $sidebar_pos = get_theme_mod( 'AgenciaOpen_sidebar_position' ); ?>
 
 <?php if ( 'right' === $sidebar_pos || 'both' === $sidebar_pos ) : ?>
 

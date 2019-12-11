@@ -2,14 +2,14 @@
 /**
  * Boostrap 4 pagination
  *
- * @package master12
+ * @package AgenciaOpen
  */
 
 /**
  * Generates a pagination partial template for Bootstrap 4
  * Mostly based on http://www.wpbeginner.com/wp-themes/how-to-add-numeric-pagination-in-your-wordpress-theme/
  */
-function master12_pagination() {
+function AgenciaOpen_pagination() {
 	if ( is_singular() ) {
 		return;
 	}
